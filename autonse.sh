@@ -93,11 +93,7 @@ function scan_ftp() {
 	plus "Loading ftp nse scripts..."
 	search_nse 'ftp'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 21 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 21 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 21 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -107,11 +103,7 @@ function scan_ssh() {
 	plus "Loading ssh nse scripts..."
 	search_nse 'ssh'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 22 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 22 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 22 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -121,11 +113,7 @@ function scan_telnet() {
 	plus "Loading telnet nse scripts..."
 	search_nse 'telnet'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 23 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 23 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 23 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -135,11 +123,7 @@ function scan_smtp() {
 	plus "Loading smtp nse scripts..."
 	search_nse 'smtp'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 25 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 25 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 25 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -149,11 +133,7 @@ function scan_dns() {
 	plus "Loading dns nse scripts..."
 	search_nse 'dns'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 53 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 53 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 53 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -163,11 +143,7 @@ function scan_http() {
 	plus "Loading http nse scripts..."
 	search_nse 'http'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 80 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 80 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 80 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -177,11 +153,7 @@ function scan_ssl() {
 	plus "Loading ssl nse scripts..."
 	search_nse 'ssl'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 443 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 443 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 443 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -191,11 +163,7 @@ function scan_smb() {
 	plus "Loading smb nse scripts..."
 	search_nse 'smb'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 445 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 445 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 445 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -205,11 +173,7 @@ function scan_pop3() {
 	plus "Loading pop3 nse scripts..."
 	search_nse 'pop3'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 110 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 110 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 110 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -219,11 +183,7 @@ function scan_ntp() {
 	plus "Loading ntp nse scripts..."
 	search_nse 'ntp'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 123 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 123 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 123 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -233,11 +193,7 @@ function scan_oracle() {
 	plus "Loading oracle nse scripts..."
 	search_nse 'oracle'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 1521 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 1521 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 1521 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -247,11 +203,7 @@ function scan_imap() {
 	plus "Loading imap nse scripts..."
 	search_nse 'imap'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 143 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 143 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 143 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -261,11 +213,7 @@ function scan_sip() {
 	plus "Loading sip nse scripts..."
 	search_nse 'sip'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 5060 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 5060 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 5060 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -275,11 +223,7 @@ function scan_ldap() {
 	plus "Loading ldap nse scripts..."
 	search_nse 'ldap'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 389 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 389 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 389 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -289,11 +233,7 @@ function scan_mssql() {
 	plus "Loading mssql nse scripts..."
 	search_nse 'ms-sql'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 1433 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 1433 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 1433 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -303,11 +243,7 @@ function scan_nfs() {
 	plus "Loading nfs nse scripts..."
 	search_nse 'nfs'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 2049 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 2049 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 2049 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -317,11 +253,7 @@ function scan_mysql() {
 	plus "Loading mysql nse scripts..."
 	search_nse 'mysql'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 3306 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 3306 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 3306 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -331,11 +263,7 @@ function scan_vnc() {
 	plus "Loading vnc nse scripts..."
 	search_nse 'vnc'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 5900 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 5900 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 5900 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -345,11 +273,7 @@ function scan_mongodb() {
 	plus "Loading mongodb nse scripts..."
 	search_nse 'mongodb'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 27017 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 27017 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 27017 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -359,11 +283,7 @@ function scan_couchdb() {
 	plus "Loading couchdb nse scripts..."
 	search_nse 'couchdb'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 5984 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 5984 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 5984 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -373,11 +293,7 @@ function scan_netbus() {
 	plus "Loading netbus nse scripts..."
 	search_nse 'netbus'
 	plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-	if [ -n $output ]; then
-		exec_command="nmap -p 12345 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	else
-		exec_command="nmap -p 12345 --script=$nse --script-args userdb=user.txt,pass.txt $ip"
-	fi
+	exec_command="nmap -p 12345 $output --script=$nse --script-args userdb=user.txt,pass.txt $ip"
 	info "Scanning... Please wait..."
 	$exec_command
 }
@@ -387,11 +303,7 @@ function scan_modbus() {
 	plus "Loading modbus nse scripts..."
         search_nse 'modbus'
         plus "Found $(echo $nse|tr ', ' '\n'|wc -l) scripts..."
-        if [ -n $output ]; then
-                exec_command="nmap -p 502 $output --script=$nse --script-args='modbus-discover.aggressive=true'  $ip"
-        else
-                exec_command="nmap -p 502 --script=$nse --script-args='modbus-discover.aggressive=true'  $ip"
-        fi
+        exec_command="nmap -p 502 $output --script=$nse --script-args='modbus-discover.aggressive=true'  $ip"
         info "Scanning... Please wait..."
         $exec_command
 }
